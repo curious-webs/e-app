@@ -1,38 +1,60 @@
-.App {
+.prdct-grid .item {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.prdct-grid {
+  min-height: 500px;
+}
+.product-fade-wrap img {
+  max-height: 100%;
+}
+.btn.btn-to-cart{
   text-align: center;
+  float:none;
+  margin-top:10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.catBlocks .prdct-grid .item a {
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 34px;
+  height: 100%;
+align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.catBlocks .category-images {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(64,62,114,1) 54%, rgba(0,212,255,1) 100%);
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,0.7959383582534576) 0%, rgba(64,62,114,0.964005585144214) 99%);
+  box-shadow: 0px 0px 10px #ccc;
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-item a {
+  text-transform: uppercase;
+  font-weight: 600 !important;
+}
+.blog-inner {
+  box-shadow: 0px 0px 3px #ccc;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  height: 332px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blog-inner .img-responsive {
+  max-height: 230px;
+  width: 100%; 
+  object-fit: cover;
 }
