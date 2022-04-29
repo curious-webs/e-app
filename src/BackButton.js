@@ -5,7 +5,7 @@ let BackButton = props => {
   let history = useHistory ();
   return (
     <React.Fragment>
-      <div className="row" style={{"margin-top":"50px"}}>
+      <div className="row" style={{"marginTop":"50px"}}>
         <button className="btn btn-primary" onClick={() => history.goBack ()}>
           {props.btnText ? props.btnText : 'Back'}
         </button>

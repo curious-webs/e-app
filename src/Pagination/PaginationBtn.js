@@ -4,7 +4,7 @@ let PaginationBtn = props => {
 
   return (
     <React.Fragment>
-      <button onClick={props.onClick} className="btn btn-primary">
+      <button key={pageNumber} onClick={props.onClick} className="btn btn-primary">
         {props.pageNumber}
       </button>
     </React.Fragment>

@@ -206,7 +206,8 @@ let Nav = () => {
                     return (
                       <React.Fragment>
 
-                        <li key={cat} className="menu-item">  <Link to={`/products/category/${cat}`}>{cat} </Link></li>
+                        <li key={cat} className="menu-item"> 
+                         <Link key={cat} to={`/products/category/${cat}`}>{cat} </Link></li>
 
                       </React.Fragment>
                     );

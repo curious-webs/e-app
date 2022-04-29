@@ -12,7 +12,7 @@ let Pagination = props => {
 
   if (startPage > 1) {
     rows.push (
-      <PaginationBtn onClick={() => props.onClick (1)} pageNumber={1} key={1} />
+      <PaginationBtn  onClick={() => props.onClick (1)} pageNumber={1} key={1} />
     );
   }
   for (var i = startPage; i < endPage; i++) {
@@ -24,7 +24,7 @@ let Pagination = props => {
       }
     }
     rows.push (
-      <PaginationBtn
+      <PaginationBtn 
         onClick={() => props.onClick (num)}
         pageNumber={num}
         key={num}
@@ -38,7 +38,7 @@ let Pagination = props => {
       <PaginationBtn
         onClick={() => props.onClick (totalPage)}
         pageNumber={totalPage}
-        key={totalPage}
+        key={totalPage} 
       />
     );
   }
