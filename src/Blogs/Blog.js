@@ -81,7 +81,7 @@ if(sort == 'asc'){
       return item;
     }
   });
-  if (sort != '') {
+  if (sort != '' && searchedKeyword != '') {
     var byDate = posts.slice (0);
     console.log ('posts array');
     console.log (byDate);

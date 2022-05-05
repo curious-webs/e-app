@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+
 import './App.css';
 import Home from './Home';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
@@ -15,6 +16,8 @@ import BlogDetail from './Blogs/BlogDetail';
 import AllProducts from './AllProducts';
 import AllCategories from './AllCategories';
 import Category from './Category';
+import Signin from './User/Signin';
+import Dashboard from './User/Dashboard';
 
 function App () {
   return (
@@ -40,11 +43,20 @@ function App () {
           <Route path="/blog/:id">
             <BlogDetail/>
           </Route>
+          <Route path="/dashboard">
+            <Dashboard/>
+          </Route>
           <Route path="/products/categories">
             <AllCategories/>
           </Route>
           <Route path="/products/category/:category">
             <Category/>
+          </Route>
+          <Route path="/signin">
+            <Signin/>
+          </Route>
+          <Route path="/signup">
+            <Signup/>
           </Route>
           <Route path="/contact">
             <Contact />

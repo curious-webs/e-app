@@ -1,9 +1,29 @@
 import React from 'react';
 import axios from 'axios';
+import {useSelector, useDispatch} from 'react-redux';
+import {connect} from 'react-redux';
 import {useState, useEffect} from 'react';
 import {Router, Link} from 'react-router-dom';
 
-let Nav = () => {
+let Nav = (props) => {
+  let isLoggedIn = false;
+  let username = '';
+ 
+  if (props.users.status == '200') {
+    isLoggedIn = true;
+    username = props.users.data.email;
+  }
+  let providerId  = false;
+  if (props.users.providerId) {
+    isLoggedIn = true;
+    username = props.users.email;
+    providerId = 'true'; 
+  }  
+  let displayName = props.displayName;
+  console.log("display name in props");
+  console.log(displayName); 
+  console.log("props");
+  console.log(props);
   const [categories, setData] = useState ([]);
   const fetchApi = async () => {
     await axios
@@ -37,13 +57,21 @@ let Nav = () => {
               </li>
             </ul>
 
+           {!isLoggedIn &&  
             <div className="top-control">
 
               <Link to="/register">Register</Link>
               {/* <a href=""></a> */}
               <span>•</span>
-              <a href="">Login</a>
-            </div>
+              <a href="">Login</a>  </div>
+           }
+           {isLoggedIn &&   <div className="top-control">
+
+<Link to="/register">{username} {displayName}</Link>
+
+{/* <a href=""></a> */}
+  </div>}
+           
             <div className="clearfix" />
             <div className="top-offers show-mobile">
               <div
@@ -227,4 +255,16 @@ let Nav = () => {
   );
 };
 
-export default Nav;
+// export default Nav;
+const mapStateToProps = state => {
+  console.log("state in nav");
+  console.log(state); 
+  return {
+    users: state.user.users,
+    displayName : state.userInfo.displayName
+  };
+};
+
+// export default Dashboard;
+
+export default connect (mapStateToProps) (Nav);
